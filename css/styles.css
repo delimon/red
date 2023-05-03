@@ -1,3 +1,81 @@
+/* box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+ul,
+ol {
+  padding: 0;
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/*  body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+
+ul,
+ol {
+  list-style: none;
+}
+
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: rgb(245, 150, 121);
@@ -11,55 +89,15 @@ body {
   text-align: center;
 }
 
-
-.imgclass {
-  border-radius: 0%;
-  width: 165px;
-  padding: 3px;
-  
-} 
-
-.imgclass2 {
-  border-radius: 0%;
+.avatar {
+  vertical-align: middle;
   width: 300px;
-  padding: 6px;
-  
-} 
-
-.fpbutton1 {
-  background-color: #fff;
-  color: black;
-  padding: 10px;
-  width: 320px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 17px;
-  margin: 8px 4px;
-  cursor: pointer;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.fpbutton1 {
-  animation: shake 1.5s;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-delay: 1s;
-}
-
-@keyframes shake {
-  0% { transform: translate(0px, 0px) rotate(0deg); }
-  49% { transform: translate(0px, 0px) rotate(0deg); }
-  50% { transform: translate(-1px, -2px) rotate(-1deg); }
-  55% { transform: translate(-3px, 0px) rotate(1deg); }
-  60% { transform: translate(3px, 2px) rotate(0deg); }
-  65% { transform: translate(1px, -1px) rotate(1deg); }
-  70% { transform: translate(-1px, 2px) rotate(-1deg); }
-  75% { transform: translate(-3px, 1px) rotate(0deg); }
-  80% { transform: translate(3px, 1px) rotate(-1deg); }
-  85% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, -55px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  height: 300px;
+  border-radius: 50%;
+  margin: 10px auto 20px;
+  display: block;
+  background-color: rgba(255,255,255, 255);
+  box-shadow: 0px 6px 60px 16px rgba(255,255,255, 255);
 }
 
 
@@ -67,12 +105,12 @@ body {
 
 	background-color: #fff;
 	color: black;
-	padding: 10px;
+	padding: 5px;
 	width: 80%;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 17px;
+	font-size: 16px;
 	margin: 8px 4px;
 	cursor: pointer;
 	border-radius: 20px;
@@ -80,224 +118,69 @@ body {
 }
 .mydiv {
   width: 80%;
-  margin-bottom: 5px;
+  margin: 10px;
 	background-color: #fff;
 	color: black;
 	cursor: pointer;
 	border-radius: 20px;
   
 }
-
-
-.fpbutton2 {
-  background-color: #fff;
-  color: black;
-  padding: 10px;
-  width: 320px;
-  text-align: center;
-  text-decoration: none;
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
   display: inline-block;
-  font-size: 17px;
-  margin: 8px 4px;
-  cursor: pointer;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.19);
-  
+  padding: 0;
 }
-
-.fpbutton2 {
-  
-  animation: shake2 1.5s;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-delay: 6s;
-}
-
-.fpbutton3 {
-  background-color: #fff;
-  color: black;
-  padding: 10px;
-  width: 320px;
+.wrapper ul li {
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  margin: 0 10px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 17px;
-  margin: 8px 4px;
   cursor: pointer;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 50%;
+  border: 5px solid #D8E2DC;
+  float: left;
+  transition: all 0.5s ease;
 }
-
-.fpbutton3 {
-  
-  animation: shake2 1.5s;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-delay: 600s;
+.wrapper ul li .fa {
+  color: #D8E2DC;
+  margin-top: 20px;
+  transition: all 0.5s ease;
 }
-
-.ptbutton {
-  border-radius: 0%;
-  padding: 0px;
-  width: 340px;
-  height: 70px;
-  margin: 8px 4px;
-  cursor: pointer;
-
+/*twitter*/
+.wrapper ul li:hover.patreon {
+  border: 5px solid #0f0f0f;
+  box-shadow: 0 0 15px #0f0f0f;
+  transition: all 0.5s ease;
 }
-
-
-
-@keyframes shake2 {
-  0% { transform: translate(0px, 0px) rotate(0deg); }
-  5% { transform: translate(0px, 0px) rotate(0deg); }
-  10% { transform: translate(0px, 0px) rotate(0deg); }
-  75% { transform: translate(0px, 0px) rotate(0deg); }
-  79% { transform: translate(0px, 0px) rotate(5deg); }
-  83% { transform: translate(0px, 0px) rotate(-5deg); }
-  87% { transform: translate(0px, 0px) rotate(5deg); }
-  91% { transform: translate(0px, 0px) rotate(-5deg); }
-  100% { transform: translate(0px, 0px) rotate(0deg); }
+.wrapper ul li:hover .fa-patreon {
+  color: #0f0f0f;
+  text-shadow: 0 0 15px #0f0f0f;
+  transition: all 0.5s ease;
 }
-
-.ttbutton {
-  background-color: #000;
-  color: white;
-  padding: 10px;
-  width: 140px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-  margin: 8px 4px;
-  cursor: pointer;
+/*twitter*/
+.wrapper ul li:hover.twitter {
+  border: 5px solid #00aced;
+  box-shadow: 0 0 15px #00aced;
+  transition: all 0.5s ease;
 }
-
-.ttbutton {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+.wrapper ul li:hover .fa-twitter {
+  color: #00aced;
+  text-shadow: 0 0 15px #0cadec;
+  transition: all 0.5s ease;
 }
-
-.igbutton {
-  background-color: #c12b61;
-  color: white;
-  padding: 10px;
-  width: 140px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-  margin: 8px 4px;
-  cursor: pointer;
+/* instagram */
+.wrapper ul li:hover.instagram {
+  border: 5px solid #e70e0e;
+  box-shadow: 0 0 15px #e70e0e;
+  transition: all 0.5s ease;
 }
-
-.igbutton {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+.wrapper ul li:hover .fa-instagram {
+  color: #e70e0e;
+  text-shadow: 0 0 15px #e70e0e;
+  transition: all 0.5s ease;
 }
-
-.scbutton {
-  background-color: #fefa53;
-  color: white;
-  -webkit-text-stroke: 1px black;
-  padding: 10px;
-  width: 140px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-  margin: 8px 4px;
-  cursor: pointer;
-}
-
-.scbutton {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.twbutton {
-  background-color: #6cabe8;
-  color: white;
-  padding: 10px;
-  width: 140px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-  margin: 8px 4px;
-  cursor: pointer;
-}
-
-.twbutton {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.prof5 {
-border-radius: 50%;
-width: 140px;
-}
-
-.facebookbutton {
-  width: 450px;
-  height: 150px;
-  border-radius: 0%;
-}  
-  
-.youtubebutton {
-  width: 450px;
-  height: 150px;
-  border-radius: 0%;
-}
-
-.tiktokbutton {
-  width: 450px;
-  height: 150px;
-  border-radius: 0%;
-}  
-  
-.twitchbutton {
-  width: 450px;
-  height: 150px;
-  border-radius: 0%;
-}
-
-
-
-.instagrambutton {
-  width: 450px;
-  height: 150px;
-  border-radius: 0%;
-}  
-  
-
-.twitterbutton1 {
-  width: 450px;
-  height: 150px;
-  border-radius: 0%;
-}
-
-.twitterbutton2 {
-  width: 450px;
-  height: 150px;
-  border-radius: 0%;
-}
-
-.fpbutton3 {
-	width = 500px;
-      /* 
-  background-color: #fff;
-  color: black;
- 
- padding: 10px;
-  width: 320px;
-
- text-align: center;
-  text-decoration: none;
-
-  font-size: 17px;
-
-  margin: 8px 4px;
-  cursor: pointer;
-  
-   display: inline-block; 
-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.19); */
-
-}
-
-
 
